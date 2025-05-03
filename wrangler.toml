@@ -2,7 +2,12 @@ name = "xano-mcp"
 main = "src/index.ts"
 compatibility_date = "2024-01-01"
 
-[vars]
-XANO_API_KEY = "metadata_api_key_here"
-XANO_WORKSPACE = "1"
-XANO_API_BASE = "https://your-url.xano.io/api:meta" 
+[build]
+command = "npm run build"
+
+[env.production]
+name = "xano-mcp-prod"
+route = "mcp.your-domain.com/*"  # Replace with your domain
+
+[env.staging]
+name = "xano-mcp-staging" 
